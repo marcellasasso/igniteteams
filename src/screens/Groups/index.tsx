@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import { Container } from './styles'
 
@@ -11,6 +12,12 @@ import { Button } from '@components/Button'
 
 export function Groups() {
   const [groups, setGroups] = useState([])
+
+  const navigation = useNavigation()
+
+  function handleNewGroup() {
+    navigation.navigate('new')
+  }
 
   return (
     <Container>
@@ -29,7 +36,7 @@ export function Groups() {
         showsVerticalScrollIndicator={false}
       />
 
-      <Button title="Criar nova turma" />
+      <Button title="Criar nova turma" onPress={handleNewGroup} />
     </Container>
   )
 }
