@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-catch */
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { GROUP_COLLECTION } from '@storage/storageConfig'
 
@@ -10,6 +9,7 @@ export async function groupsGetAll() {
 
     return groups
   } catch (error) {
+    console.log(error)
     throw error
   }
 }
